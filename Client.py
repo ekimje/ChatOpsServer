@@ -1,5 +1,7 @@
 import socket
 import threading
+import keyboard
+import sys
 
 server_host = '127.0.0.1'
 server_port = 8080
@@ -13,12 +15,18 @@ def send_messages():
     while True:
         message = input()
         client_socket.sendall(message.encode())
+        
+        if message == 'exit':
+            print('채팅 종료')
+            client_socket.close()
+            break
 
 def receive_messages():
     while True:
         try:
             message = client_socket.recv(1024).decode()
-            print(message)
+            print(f'Server >> {message}')
+            
         except:
             break
 
@@ -27,5 +35,5 @@ receive_thread = threading.Thread(target=receive_messages)
 send_thread.start()
 receive_thread.start()
 
-
-    
+send_thread.join()
+receive_thread.join()

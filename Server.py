@@ -15,12 +15,32 @@ print('waiting.....')
 client_socket, client_address = server_socket.accept()
 print(f'Client connected: {client_address}')
 
-while True:
-    message = client_socket.recv(1024)
+def send_message():
+    while True:
+        message = input()
+        client_socket.sendall(message.encode())
+
+def receive_message():
+    while True:
+        message = client_socket.recv(1024)
     
-    if not message:
-        break
-    print(message.decode())
-    
-client_socket.close()
+        if not message:
+            break
+        
+        if message == 'exit':
+            print('채팅 종료')
+            client_socket.close()
+            break
+        
+        print(f'Client >> {message.decode()}')
+
+send_thread = threading.Thread(target = send_message)
+receive_thread = threading.Thread(target = receive_message)
+
+send_thread.start()
+receive_thread.start()
+
+send_thread.join()
+receive_thread.join()
+
 server_socket.close()
