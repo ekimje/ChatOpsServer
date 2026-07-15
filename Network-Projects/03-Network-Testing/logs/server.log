@@ -1,0 +1,20 @@
+2026-07-14 23:20:56,322 [INFO] [서버 시작] 0.0.0.0:9001
+2026-07-14 23:20:57,309 [INFO] [접속] Tester-Graceful (127.0.0.1:58737)
+2026-07-14 23:20:57,509 [INFO] [정상 종료] Tester-Graceful - exit 메시지 수신
+2026-07-14 23:20:57,510 [INFO] [퇴장] Tester-Graceful (127.0.0.1:58737)
+2026-07-14 23:20:58,011 [INFO] [접속] Observer1 (127.0.0.1:58738)
+2026-07-14 23:20:58,212 [INFO] [접속] Victim-RST (127.0.0.1:58740)
+2026-07-14 23:20:58,714 [ERROR] [ConnectionReset] Victim-RST - ConnectionResetError: [WinError 10054] 현재 연결은 원격 호스트에 의해 강제로 끊겼습니다
+2026-07-14 23:20:58,714 [INFO] [퇴장] Victim-RST (127.0.0.1:58740)
+2026-07-14 23:20:59,215 [INFO] [FIN 수신] Observer1 - recv()가 빈 바이트 반환 (정상 종료)
+2026-07-14 23:20:59,215 [INFO] [퇴장] Observer1 (127.0.0.1:58738)
+2026-07-14 23:20:59,215 [INFO] [접속] Tester-Timeout (127.0.0.1:58741)
+2026-07-14 23:21:02,218 [ERROR] [Timeout] Tester-Timeout - 3초간 데이터 없음 (idle timeout)
+2026-07-14 23:21:02,218 [INFO] [퇴장] Tester-Timeout (127.0.0.1:58741)
+2026-07-14 23:21:03,417 [INFO] [접속] Tester-Reconnect (127.0.0.1:58742)
+2026-07-14 23:21:03,617 [INFO] [정상 종료] Tester-Reconnect - exit 메시지 수신
+2026-07-14 23:21:03,617 [INFO] [퇴장] Tester-Reconnect (127.0.0.1:58742)
+2026-07-14 23:21:04,219 [INFO] [접속] Tester-Reconnect (127.0.0.1:58743)
+2026-07-14 23:21:04,720 [INFO] [FIN 수신] Tester-Reconnect - recv()가 빈 바이트 반환 (정상 종료)
+2026-07-14 23:21:04,720 [INFO] [퇴장] Tester-Reconnect (127.0.0.1:58743)
+2026-07-14 23:21:04,746 [INFO] [접속] Tester-BrokenPipe (127.0.0.1:58744)
